@@ -1,0 +1,592 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sulaimon Mayowa | Full-Stack Engineer &amp; AI Agent Builder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-mono/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#000000",
+                      "on-primary-fixed": "#1b1b1b",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-background": "#1b1b1b",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#4c4546",
+                      "surface-container-low": "#f3f3f3",
+                      "on-primary-fixed-variant": "#474747",
+                      "primary-container": "#1b1b1b",
+                      "surface-bright": "#f9f9f9",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "surface-variant": "#e2e2e2",
+                      "on-primary-container": "#848484",
+                      "surface-container": "#eeeeee",
+                      "outline-variant": "#cfc4c5",
+                      "secondary-container": "#e1dfdf",
+                      "primary-fixed": "#e2e2e2",
+                      "inverse-surface": "#303030",
+                      "secondary-fixed-dim": "#c7c6c6",
+                      "surface-dim": "#dadada",
+                      "surface-container-high": "#e8e8e8",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "tertiary": "#000000",
+                      "surface": "#f9f9f9",
+                      "surface-tint": "#5e5e5e",
+                      "on-surface": "#1b1b1b",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "secondary-fixed": "#e4e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#464747",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary": "#5e5e5e",
+                      "inverse-primary": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#848484",
+                      "tertiary-container": "#1b1b1b",
+                      "background": "#f9f9f9",
+                      "on-secondary-container": "#626262",
+                      "inverse-on-surface": "#f1f1f1",
+                      "outline": "#7e7576",
+                      "indigo-accent": "#6366f1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-padding": "24px",
+                      "margin-desktop": "60px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "panel-padding": "40px",
+                      "container-max": "1200px",
+                      "section-gap": "80px"
+              },
+              "fontFamily": {
+                      "label-mono": ["Geist Mono"],
+                      "h2": ["Geist"],
+                      "h3": ["Geist"],
+                      "body-md": ["Geist"],
+                      "h1": ["Geist"],
+                      "caption": ["Geist"],
+                      "h2-mobile": ["Geist"],
+                      "body-lg": ["Geist"],
+                      "h1-mobile": ["Geist"]
+              },
+              "fontSize": {
+                      "label-mono": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "h2": ["56px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "h3": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h1": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "h2-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h1-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F7F7F5;
+            cursor: none;
+            overflow-x: hidden;
+        }
+        
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background: black;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+        }
+
+        .cursor-glow {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0) 70%);
+            position: fixed;
+            top: -250px;
+            left: -250px;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F7F7F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E7E7E4;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .terminal-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .blinking-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .skill-bar {
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<div class="custom-cursor" id="cursor" style="left: 2px; top: 2806px; transform: scale(1);"></div>
+<div class="cursor-glow" id="glow" style="left: -248px; top: 2556px;"></div>
+<!-- // navigation -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1280px] h-[68px] rounded-full bg-surface/80 backdrop-blur-md border border-outline-variant/50 shadow-sm flex justify-between items-center px-8 z-50">
+<div class="font-h3 text-h3 font-bold text-primary">sm.</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#work">Work</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#services">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#process">Process</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-mono text-label-mono hover:bg-indigo-accent transition-all active:scale-95">Book a call</button>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop space-y-section-gap pt-32 pb-20">
+<!-- // hero -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center min-h-[716px] reveal active">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/30">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="font-label-mono text-label-mono uppercase tracking-wider text-on-surface-variant">Available for projects</span>
+</div>
+<h1 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1">
+                    Sulaimon <span class="text-secondary opacity-60">Mayowa</span>
+</h1>
+<div class="flex flex-wrap gap-4 font-label-mono text-label-mono">
+<span class="px-4 py-2 bg-surface-container-highest rounded-lg">FULL-STACK ENGINEER</span>
+<span class="px-4 py-2 bg-indigo-accent/10 text-indigo-accent rounded-lg">AI AGENT BUILDER</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-lg">WORKFLOW ARCHITECT</span>
+</div>
+<div class="grid grid-cols-3 gap-8 py-8 border-y border-outline-variant/30">
+<div>
+<div class="font-h3 text-h3">5+</div>
+<div class="font-caption text-caption text-secondary uppercase">Years Exp.</div>
+</div>
+<div>
+<div class="font-h3 text-h3">10+</div>
+<div class="font-caption text-caption text-secondary uppercase">Projects</div>
+</div>
+<div>
+<div class="font-h3 text-h3">50%</div>
+<div class="font-caption text-caption text-secondary uppercase">Efficiency Gain</div>
+</div>
+</div>
+<div class="flex gap-6 pt-4">
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">link</span> LinkedIn</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">code</span> GitHub</a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span> Twitter</a>
+</div>
+</div>
+<div class="lg:pl-12">
+<div class="terminal-float bg-[#1b1b1b] rounded-xl overflow-hidden shadow-2xl border border-white/10 font-label-mono text-[13px] leading-relaxed">
+<div class="bg-white/5 px-4 py-2 flex gap-2 border-b border-white/5">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+</div>
+<div class="p-6 text-[#a9b7c6] min-h-[300px]">
+<div class="mb-4">
+<span class="text-[#27c93f]">➜</span> <span class="text-[#6366f1]">~</span> whoami
+                            <div class="text-white mt-1">sulaimon-mayowa (developer, innovator, architect)</div>
+</div>
+<div class="mb-4">
+<span class="text-[#27c93f]">➜</span> <span class="text-[#6366f1]">~</span> cat skills.json
+                            <div class="mt-1">
+                                {<br>
+                                &nbsp;&nbsp;"frontend": ["React", "Next.js", "Tailwind"],<br>
+                                &nbsp;&nbsp;"backend": ["Node", "Python", "Postgres"],<br>
+                                &nbsp;&nbsp;"ai": ["LangChain", "LLMs", "VectorDBs"]<br>
+                                }
+                            </div>
+</div>
+<div>
+<span class="text-[#27c93f]">➜</span> <span class="text-[#6366f1]">~</span> <span class="blinking-cursor"></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- // about -->
+<section class="reveal active" id="about">
+<span class="font-label-mono text-label-mono text-secondary">// about</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap mt-4">
+<div>
+<h2 class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 mb-8">Bridging intelligence and architecture.</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                        I specialize in building production-ready applications that leverage the latest in AI and full-stack technologies. My focus is on creating autonomous workflows and interfaces that don't just work—they scale.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container border border-outline-variant/30 p-8 rounded-xl flex flex-col items-start gap-4">
+<span class="material-symbols-outlined text-indigo-accent text-3xl">rocket</span>
+<div class="font-label-mono text-label-mono uppercase font-bold">Fast Execution</div>
+</div>
+<div class="bg-surface-container border border-outline-variant/30 p-8 rounded-xl flex flex-col items-start gap-4">
+<span class="material-symbols-outlined text-indigo-accent text-3xl">smart_toy</span>
+<div class="font-label-mono text-label-mono uppercase font-bold">AI Integration</div>
+</div>
+<div class="bg-surface-container border border-outline-variant/30 p-8 rounded-xl flex flex-col items-start gap-4">
+<span class="material-symbols-outlined text-indigo-accent text-3xl">trending_up</span>
+<div class="font-label-mono text-label-mono uppercase font-bold">Scalability</div>
+</div>
+<div class="bg-surface-container border border-outline-variant/30 p-8 rounded-xl flex flex-col items-start gap-4">
+<span class="material-symbols-outlined text-indigo-accent text-3xl">layers</span>
+<div class="font-label-mono text-label-mono uppercase font-bold">Full Stack</div>
+</div>
+</div>
+</div>
+</section>
+<!-- // services -->
+<section class="reveal active" id="services">
+<span class="font-label-mono text-label-mono text-secondary">// services</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+<div class="relative group overflow-hidden bg-surface-container-low border border-outline-variant/30 p-10 rounded-2xl h-[400px] flex flex-col justify-end">
+<div class="absolute top-0 right-0 w-32 h-32 bg-indigo-accent/5 rounded-full blur-3xl group-hover:bg-indigo-accent/20 transition-all"></div>
+<span class="material-symbols-outlined text-4xl mb-6">terminal</span>
+<h3 class="font-h3 text-h3 mb-4">Web Engineering</h3>
+<p class="text-secondary">Building high-performance React applications with pixel-perfect precision and server-side optimization.</p>
+</div>
+<div class="relative group overflow-hidden bg-primary text-on-primary p-10 rounded-2xl h-[400px] flex flex-col justify-end shadow-2xl">
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-indigo-accent/20 rounded-full blur-[80px]"></div>
+<span class="material-symbols-outlined text-4xl mb-6 text-indigo-accent">psychology</span>
+<h3 class="font-h3 text-h3 mb-4">AI Solutions</h3>
+<p class="text-on-primary/70">Architecting custom LLM pipelines, autonomous agents, and RAG systems for enterprise automation.</p>
+</div>
+<div class="relative group overflow-hidden bg-surface-container-low border border-outline-variant/30 p-10 rounded-2xl h-[400px] flex flex-col justify-end">
+<div class="absolute top-0 left-0 w-32 h-32 bg-indigo-accent/5 rounded-full blur-3xl group-hover:bg-indigo-accent/20 transition-all"></div>
+<span class="material-symbols-outlined text-4xl mb-6">hub</span>
+<h3 class="font-h3 text-h3 mb-4">Workflow Arch</h3>
+<p class="text-secondary">Streamlining complex business logic through automated integrations and serverless infrastructure.</p>
+</div>
+</div>
+</section>
+<!-- // projects -->
+<section class="reveal active" id="work">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-mono text-label-mono text-secondary">// projects</span>
+<h2 class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 mt-4">Selected Works</h2>
+</div>
+<button class="font-label-mono text-label-mono border-b border-primary pb-1 mb-4 hover:text-indigo-accent hover:border-indigo-accent transition-colors">View All Archive</button>
+</div>
+<div class="space-y-2">
+<div class="group py-12 px-6 border-b border-outline-variant/30 flex flex-col md:flex-row items-start md:items-center justify-between transition-colors hover:bg-surface-variant/40 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-label-mono text-secondary">01</span>
+<div>
+<h3 class="font-h3 text-h3">Smarts Magazine</h3>
+<div class="flex gap-3 mt-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">WORDPRESS</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">ELEMENTOR PRO</span>
+</div>
+</div>
+</div>
+<div class="mt-6 md:mt-0 flex items-center gap-4 group-hover:translate-x-2 transition-transform">
+<span class="font-label-mono text-label-mono">View Project</span>
+<span class="material-symbols-outlined">north_east</span>
+</div>
+</div>
+<div class="group py-12 px-6 border-b border-outline-variant/30 flex flex-col md:flex-row items-start md:items-center justify-between transition-colors hover:bg-surface-variant/40 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-label-mono text-secondary">02</span>
+<div>
+<h3 class="font-h3 text-h3">Prime Booth Edu Advisory</h3>
+<div class="flex gap-3 mt-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">WORDPRESS</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">ELEMENTOR PRO</span>
+</div>
+</div>
+</div>
+<div class="mt-6 md:mt-0 flex items-center gap-4 group-hover:translate-x-2 transition-transform">
+<span class="font-label-mono text-label-mono">View Project</span>
+<span class="material-symbols-outlined">north_east</span>
+</div>
+</div>
+<div class="group py-12 px-6 border-b border-outline-variant/30 flex flex-col md:flex-row items-start md:items-center justify-between transition-colors hover:bg-surface-variant/40 cursor-pointer">
+<div class="flex items-center gap-12">
+<span class="font-label-mono text-label-mono text-secondary">03</span>
+<div>
+<h3 class="font-h3 text-h3">IEH Consult Ltd</h3>
+<div class="flex gap-3 mt-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">WORDPRESS</span>
+<span class="bg-surface-container px-3 py-1 rounded-full text-[12px] font-label-mono">CRM</span>
+</div>
+</div>
+</div>
+<div class="mt-6 md:mt-0 flex items-center gap-4 group-hover:translate-x-2 transition-transform">
+<span class="font-label-mono text-label-mono">View Project</span>
+<span class="material-symbols-outlined">north_east</span>
+</div>
+</div>
+</div>
+</section>
+<!-- // skills -->
+<section class="reveal active">
+<span class="font-label-mono text-label-mono text-secondary">// expertise</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-8">
+<div class="space-y-6">
+<h4 class="font-label-mono text-label-mono font-bold uppercase tracking-widest text-secondary">Frontend</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">React / Next.js</span><span class="">95%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="95" style="width: 95%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">Tailwind CSS</span><span class="">90%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="90" style="width: 90%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">TypeScript</span><span class="">88%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="88" style="width: 88%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-mono text-label-mono font-bold uppercase tracking-widest text-secondary">Backend &amp; AI</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">Node.js / Python</span><span class="">92%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-indigo-accent" data-percent="92" style="width: 92%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">LangChain / OpenAI</span><span class="">85%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-indigo-accent" data-percent="85" style="width: 85%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">Supabase / Firebase<br></span><span class="">80%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-indigo-accent" data-percent="80" style="width: 80%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-mono text-label-mono font-bold uppercase tracking-widest text-secondary">Infrastructure</h4>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">AWS / GCP</span><span class="">75%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="75" style="width: 75%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">Docker / Kubernetes</span><span class="">70%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="70" style="width: 70%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2"><span class="font-label-mono">CI/CD Pipelines</span><span class="">85%</span></div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="skill-bar h-full bg-primary" data-percent="85" style="width: 85%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- // process -->
+<section class="reveal active" id="process">
+<span class="font-label-mono text-label-mono text-secondary">// the path</span>
+<h2 class="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 mt-4 mb-12">How I deliver excellence.</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="relative bg-white border border-outline-variant/30 p-10 rounded-xl h-[300px] flex flex-col justify-between">
+<span class="absolute top-4 right-6 font-h1 text-[100px] opacity-[0.03] select-none pointer-events-none">01</span>
+<div class="font-label-mono text-label-mono font-bold text-secondary">DISCOVERY</div>
+<p class="text-secondary text-sm">Deep diving into your constraints, objectives, and technical ecosystem to find the optimal path.</p>
+</div>
+<div class="relative bg-white border border-outline-variant/30 p-10 rounded-xl h-[300px] flex flex-col justify-between">
+<span class="absolute top-4 right-6 font-h1 text-[100px] opacity-[0.03] select-none pointer-events-none">02</span>
+<div class="font-label-mono text-label-mono font-bold text-secondary">ARCHITECT</div>
+<p class="text-secondary text-sm">Designing robust system schemas and choosing the right stack for longevity and performance.</p>
+</div>
+<div class="relative bg-primary text-on-primary p-10 rounded-xl h-[300px] flex flex-col justify-between shadow-xl scale-105 z-10">
+<span class="absolute top-4 right-6 font-h1 text-[100px] opacity-[0.1] select-none pointer-events-none">03</span>
+<div class="font-label-mono text-label-mono font-bold text-indigo-accent">ENGINEERING</div>
+<p class="text-on-primary/70 text-sm">Translating blueprints into clean, maintainable, and highly efficient code with unit testing.</p>
+</div>
+<div class="relative bg-white border border-outline-variant/30 p-10 rounded-xl h-[300px] flex flex-col justify-between">
+<span class="absolute top-4 right-6 font-h1 text-[100px] opacity-[0.03] select-none pointer-events-none">04</span>
+<div class="font-label-mono text-label-mono font-bold text-secondary">DEPLOY</div>
+<p class="text-secondary text-sm">Launching with automated CI/CD and establishing monitoring to ensure constant uptime.</p>
+</div>
+</div>
+</section>
+<!-- // testimonials -->
+<section class="reveal active">
+<span class="font-label-mono text-label-mono text-secondary">// feedback</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30">
+<p class="italic text-secondary mb-8">"Sulaimon's redesign of our website was on another level compared to our previous developer. The design is premium, the process was smooth, and the final result is exactly what we needed. Truly flawless work."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<div class="font-bold text-sm">Kate.</div>
+<div class="text-[12px] text-secondary">M.D, IE-Hub Ltd</div>
+</div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-10 rounded-2xl shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20"><span class="material-symbols-outlined text-4xl">format_quote</span></div>
+<p class="italic text-on-primary/80 mb-8 relative z-10">"The task reduction we saw after implementing the AI agents Sulaimon built for us was exactly 50%. It transformed our entire operations."</p>
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-white/20"></div>
+<div>
+<div class="font-bold text-sm">Sarah Jenkins</div>
+<div class="text-[12px] text-on-primary/60">COO, Global Logistics</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30">
+<p class="italic text-secondary mb-8">"From the first discovery call to the final launch, the process was seamless. The final product feels incredibly premium and works flawlessly."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest"></div>
+<div>
+<div class="font-bold text-sm">David O.</div>
+<div class="text-[12px] text-secondary">CEO, PrimeBooth Advisory Ltd</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- // cta -->
+<section class="reveal active">
+<div class="bg-[#1b1b1b] rounded-3xl p-margin-mobile md:p-panel-padding relative overflow-hidden group">
+<div class="absolute inset-0 bg-radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15), transparent) pointer-events-none transition-all group-hover:scale-110"></div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-indigo-accent/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="relative z-10 text-center py-20 space-y-8">
+<h2 class="font-h1-mobile md:font-h1 text-h1-mobile md:text-h1 text-white">Let's build the <br><span class="text-indigo-accent">future.</span></h2>
+<p class="text-white/60 font-body-lg text-body-lg max-w-xl mx-auto">Currently accepting select projects for 2026. Reach out to discuss your architectural challenges.</p>
+<div class="pt-8">
+<button class="bg-indigo-accent text-white px-12 py-5 rounded-full font-h3 text-[20px] hover:scale-105 active:scale-95 transition-all shadow-xl shadow-indigo-accent/20">Get in Touch</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- // footer -->
+<footer class="bg-surface border-t border-outline-variant/20 py-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-h3 text-h3 font-bold text-primary">sm.</div>
+<div class="font-label-mono text-label-mono text-secondary">
+                © 2026 Sulaimon Mayowa. Built for performance.
+            </div>
+<div class="flex gap-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-opacity" href="#">LinkedIn</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-opacity" href="#">GitHub</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-opacity" href="#">Twitter</a>
+
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const glow = document.getElementById('glow');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            glow.style.left = (e.clientX - 250) + 'px';
+            glow.style.top = (e.clientY - 250) + 'px';
+        });
+
+        document.querySelectorAll('a, button, .group').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Fill skill bars if in section
+                    const bars = entry.target.querySelectorAll('.skill-bar');
+                    bars.forEach(bar => {
+                        const target = bar.getAttribute('data-percent');
+                        bar.style.width = target + '%';
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Terminal text cycling could be added here for extra polish
+    </script>
+
+
+</body></html>
