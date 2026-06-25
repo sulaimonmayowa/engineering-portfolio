@@ -36,12 +36,14 @@ export default function CaseStudies() {
                 Selected Works
               </h2>
             </div>
-            <Link
-              href="/projects"
+            <a
+              href="https://drive.google.com/file/d/1nV_8K3Q4bM6fZDzkCYSReDSGXPhL69gm/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-label-mono text-label-mono border-b border-primary pb-1 mb-4 hover:text-indigo-accent hover:border-indigo-accent transition-colors hidden md:inline-flex"
             >
-              View All Archive
-            </Link>
+              Download CV
+            </a>
           </div>
         </ScrollReveal>
 
@@ -81,15 +83,17 @@ export default function CaseStudies() {
           ))}
         </div>
 
-        {/* Mobile view all */}
+        {/* Mobile Download CV */}
         <ScrollReveal>
           <div className="mt-8 text-center md:hidden">
-            <Link
-              href="/projects"
+            <a
+              href="https://drive.google.com/file/d/1nV_8K3Q4bM6fZDzkCYSReDSGXPhL69gm/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-label-mono text-label-mono border-b border-primary pb-1 hover:text-indigo-accent hover:border-indigo-accent transition-colors"
             >
-              View All Archive
-            </Link>
+              Download CV
+            </a>
           </div>
         </ScrollReveal>
       </div>

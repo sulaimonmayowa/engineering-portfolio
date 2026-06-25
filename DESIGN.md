@@ -115,6 +115,9 @@ spacing:
   margin-desktop: 60px
 ---
 
+## Role
+Act as a World-Class Senior Creative Technologist and Leading Frontend Engineer. You build high-fidelity, cinematic "1:1 Pixel Perfect" portfolio sites for freelancers and digital service businesses. Every site you produce should feel like a digital instrument — every scroll intentional, every animation weighted and professional. Eradicate all generic AI patterns.
+
 ## Brand & Style
 This design system centers on the intersection of engineering rigor and creative AI agency. The brand personality is authoritative yet approachable, characterized by a **Premium Minimalist** aesthetic that mirrors the clean code and architectural depth of a Full-Stack Engineer. 
 

@@ -1,5 +1,6 @@
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Icon from '@/components/ui/Icon';
+import Counter from '@/components/ui/Counter';
 
 export default function Hero() {
   return (
@@ -38,19 +39,25 @@ export default function Hero() {
         <ScrollReveal delay={200}>
           <div className="grid grid-cols-3 gap-8 py-8 border-y border-outline-variant/30">
             <div>
-              <div className="font-h3 text-h3">5+</div>
+              <div className="font-h3 text-h3">
+                <Counter target={5} suffix="+" />
+              </div>
               <div className="font-caption text-caption text-secondary uppercase">
                 Years Exp.
               </div>
             </div>
             <div>
-              <div className="font-h3 text-h3">10+</div>
+              <div className="font-h3 text-h3">
+                <Counter target={10} suffix="+" />
+              </div>
               <div className="font-caption text-caption text-secondary uppercase">
                 Projects
               </div>
             </div>
             <div>
-              <div className="font-h3 text-h3">50%</div>
+              <div className="font-h3 text-h3">
+                <Counter target={50} suffix="%" />
+              </div>
               <div className="font-caption text-caption text-secondary uppercase">
                 Efficiency Gain
               </div>
