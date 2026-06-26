@@ -14,7 +14,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const project = getItemBySlug('projects', params.slug);
+  const { slug } = await params;
+  const project = getItemBySlug('projects', slug);
   if (!project) return { title: 'Not Found' };
 
   return {
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ProjectPage({ params }) {
-  const project = getItemBySlug('projects', params.slug);
+export default async function ProjectPage({ params }) {
+  const { slug } = await params;
+  const project = getItemBySlug('projects', slug);
 
   if (!project) {
     notFound();
@@ -34,7 +36,7 @@ export default function ProjectPage({ params }) {
 
   // Get all project slugs for Next/Previous navigation
   const allSlugs = getAllSlugs('projects');
-  const currentIndex = allSlugs.indexOf(params.slug);
+  const currentIndex = allSlugs.indexOf(slug);
   const nextProject = currentIndex < allSlugs.length - 1 ? allSlugs[currentIndex + 1] : null;
 
   return (

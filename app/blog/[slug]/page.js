@@ -13,7 +13,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = getItemBySlug('blog', params.slug);
+  const { slug } = await params;
+  const post = getItemBySlug('blog', slug);
   if (!post) return { title: 'Not Found' };
 
   return {
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPostPage({ params }) {
-  const post = getItemBySlug('blog', params.slug);
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = getItemBySlug('blog', slug);
 
   if (!post) {
     notFound();

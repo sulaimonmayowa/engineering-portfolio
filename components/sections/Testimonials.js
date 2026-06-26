@@ -37,8 +37,8 @@ export default function Testimonials() {
               <div
                 className={`${
                   t.featured
-                    ? 'bg-primary text-on-primary p-10 rounded-2xl shadow-2xl relative overflow-hidden'
-                    : 'bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30'
+                    ? 'bg-primary text-on-primary p-10 rounded-2xl shadow-2xl relative overflow-hidden h-full flex flex-col'
+                    : 'bg-surface-container-low p-8 rounded-2xl border border-outline-variant/30 h-full flex flex-col'
                 }`}
               >
                 {t.featured && (
@@ -47,7 +47,7 @@ export default function Testimonials() {
                   </div>
                 )}
                 <p
-                  className={`italic mb-8 relative z-10 ${
+                  className={`italic mb-8 relative z-10 grow ${
                     t.featured ? 'text-on-primary/80' : 'text-secondary'
                   }`}
                 >
