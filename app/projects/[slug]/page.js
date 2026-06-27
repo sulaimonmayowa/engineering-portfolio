@@ -185,6 +185,61 @@ export default async function ProjectPage({ params }) {
           </div>
         </article>
 
+        {/* CTA — Right after case study, when intent is highest */}
+        <section className="relative bg-[#0d0d0d] text-white overflow-hidden">
+          {/* Ambient glow */}
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#6366f1]/30 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#6366f1]/15 rounded-full blur-[100px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-[120px] md:py-[160px]">
+            <ScrollReveal>
+              <div className="text-center max-w-2xl mx-auto space-y-10">
+                {/* Label */}
+                <p className="font-label-mono text-label-mono text-[#6366f1] tracking-wider">
+                  // work together
+                </p>
+
+                {/* Heading */}
+                <h2 className="font-h2-mobile md:font-h2 text-h2-mobile md:text-h2 leading-tight">
+                  Let&apos;s build the{' '}
+                  <span className="text-[#6366f1]">next one.</span>
+                </h2>
+
+                {/* Subtext */}
+                <p className="font-body-lg text-body-lg text-white/50 max-w-lg mx-auto leading-relaxed">
+                  No commitment. Just a conversation about your goals and how
+                  we can make them happen. Currently accepting select projects.
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+                  <a
+                    href="https://calendar.app.google/1KCkejPsY4t9R9bX7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#6366f1] text-white rounded-full font-label-mono text-[16px] hover:bg-[#818cf8] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#6366f1]/30 hover:shadow-[#6366f1]/50"
+                  >
+                    <span className="material-symbols-outlined">calendar_today</span>
+                    Book a Discovery Call
+                  </a>
+                  <a
+                    href="mailto:a.sulaimonmayowa@gmail.com"
+                    className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-full font-label-mono text-[16px] border border-white/20 text-white hover:bg-white/[0.08] active:scale-[0.98] transition-all duration-200"
+                  >
+                    <span className="material-symbols-outlined">mail</span>
+                    Send an Email
+                  </a>
+                </div>
+
+                {/* Trust footnote */}
+                <p className="font-label-mono text-label-mono text-white/25 tracking-wider uppercase">
+                  Trusted by 10+ growing businesses
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Next Project */}
         {nextProject && (
           <section className="border-t border-outline-variant/20">

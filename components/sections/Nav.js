@@ -54,6 +54,7 @@ export default function Nav() {
   }, []);
 
   return (
+    <>
     <nav
       className={`fixed top-2 md:top-4 left-1/2 -translate-x-1/2 w-[calc(100%-20px)] md:w-[calc(100%-40px)] max-w-[1280px] h-[60px] md:h-[68px] rounded-full z-50 flex justify-between items-center px-4 md:px-8 transition-all duration-300 ${
         scrolled
@@ -118,7 +119,13 @@ export default function Nav() {
         />
       </button>
 
-      {/* Mobile Drawer */}
+      </nav>
+
+      {/* Mobile Drawer — rendered as a sibling of <nav> (not a child) so its
+          fixed positioning resolves against the viewport. The nav's
+          left-1/2 -translate-x-1/2 transform creates a containing block that
+          would otherwise confine `fixed inset-0` to the nav pill, collapsing
+          h-full to ~60px and leaving the page visible behind the menu. */}
       <div
         className={`fixed inset-0 z-40 md:hidden ${mobileOpen ? '' : 'pointer-events-none'}`}
       >
@@ -131,7 +138,7 @@ export default function Nav() {
         />
         {/* Drawer Panel */}
         <div
-          className={`absolute top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white dark:bg-[#121212] border-l border-outline-variant/20 transition-transform duration-400 ease-out z-50 ${
+          className={`absolute top-0 right-0 h-full w-[280px] max-w-[85vw] bg-[#ffffff] dark:bg-[#121212] border-l border-outline-variant/20 transition-transform duration-400 ease-out z-50 ${
             mobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -182,6 +189,6 @@ export default function Nav() {
           </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 }

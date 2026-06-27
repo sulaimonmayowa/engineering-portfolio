@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased" suppressHydrationWarning>
         {children}
         <NetworkToggle />
       </body>

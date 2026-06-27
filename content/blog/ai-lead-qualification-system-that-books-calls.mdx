@@ -1,0 +1,217 @@
+---
+title: 'How to Set Up an AI Lead Qualification System That Books Calls While You Sleep'
+date: '2026-06-27'
+category: 'AI & Automation'
+excerpt: 'Speed-to-lead is the single biggest variable in whether an inbound enquiry converts. This guide walks through how to build an AI lead qualification system that filters, scores, and books only your ideal clients — automatically.'
+---
+
+## The Lead That Got Away
+
+A potential client visits your website at 10:47pm on a Wednesday. They read your case studies, like what they see, and fill in your contact form. Then they close the laptop and go to bed.
+
+By the time you see the message Thursday morning and send a reply, it's been eleven hours. By the time you schedule a discovery call, it's been three days. By then, they've already booked a call with someone else — someone who responded in four minutes.
+
+This is not a hypothetical. Research from Harvard Business Review found that **companies responding to inbound leads within one hour are seven times more likely to have a meaningful conversation** with a decision-maker than those who wait even sixty minutes. At five minutes, that advantage increases to nine times.
+
+The average SME response time? **47 hours.**
+
+An AI lead qualification system closes this gap entirely — and does something more valuable on top of it: it filters out the leads who were never going to convert, so the calls that do get booked are worth having.
+
+This guide walks through exactly how to build one.
+
+***
+
+## What an AI Lead Qualification System Actually Is
+
+Before getting into the build, it's worth being precise about what this is — and what it isn't.
+
+An AI lead qualification system is **a set of connected tools and logic** that:
+
+1. Captures inbound lead information through a structured intake experience
+2. Scores the lead automatically against your defined ideal client profile (ICP)
+3. Routes qualified leads directly to your calendar for booking
+4. Handles unqualified leads with a polite, automated response
+5. Logs everything into your CRM without manual input
+
+It is **not** a chatbot that asks "How can I help you today?" and sends a generic email. It's not a simple contact form followed by a manual email three days later. And it's not a one-size-fits-all automation — the specifics of what "qualified" means are defined by you, once, and then enforced by the system every time.
+
+When it's working correctly, you stop screening leads. The system does. You only show up for the calls that were already worth taking.
+
+***
+
+## Step 1: Define What "Qualified" Actually Means
+
+This is the step most businesses skip — and the reason their qualification systems fail.
+
+If you don't have a precise definition of your ideal client, you can't automate the filtering. The system can only enforce rules you've already established.
+
+Work through these four dimensions and write down specific answers:
+
+**Budget**
+What is the minimum engagement value that makes a project viable for you? Be specific. "They need to have budget" is not a rule. "Minimum project value of £3,000" is a rule the system can enforce.
+
+**Problem type**
+What specific problems do you solve? Which ones are outside your scope? If someone needs a basic Wix site, are they a fit? If someone needs a full CRM integration with AI lead routing, are they? Define the in-scope and out-of-scope problem types in plain language.
+
+**Decision authority**
+Are you booking calls with the decision-maker, or with someone who needs to "take it to their manager"? If your average project requires sign-off from a founder or director, make that part of your qualifying criteria.
+
+**Timeline**
+A lead who wants something built "eventually, maybe next quarter" is a very different conversation than one with a live launch deadline in six weeks. Timeline is a signal of urgency — and urgency is a signal of close probability.
+
+> Write these four criteria down as if you were briefing a new team member on who to put through to a call and who to politely turn away. That briefing document becomes the logic layer of your qualification system.
+
+***
+
+## Step 2: Build the Intake Form (Not a Contact Form)
+
+The difference between a contact form and an intake form is structure. A contact form collects a name, email, and message. An intake form collects the specific information your qualification logic needs to score a lead.
+
+Your intake form should ask, at minimum:
+
+- **What best describes your business?** (Dropdown: Startup / SME / Enterprise / Individual)
+- **What are you looking to build or solve?** (Multi-select or short text — maps to your in-scope problem types)
+- **What is your estimated budget range for this project?** (Dropdown with specific ranges)
+- **When are you looking to get started?** (Dropdown: Immediately / Within 30 days / 1–3 months / Exploring options)
+- **Are you the decision-maker for this project?** (Yes / No / Shared decision)
+
+Five to seven questions is the right range. Fewer than that and you don't have enough signal. More than that and completion rates drop sharply.
+
+**Do not ask for a phone number at this stage.** It increases drop-off. You'll get it when they book the call.
+
+### Tools for the intake form
+
+- **Tally** (free, excellent conditional logic, embeds cleanly on any site)
+- **Typeform** (premium feel, strong conditional branching)
+- **HubSpot Forms** (if you're already in the HubSpot ecosystem)
+
+Conditional logic is important: if someone selects "Exploring options" for timeline and the lowest budget bracket, the subsequent questions can softly redirect them before they even reach the booking step.
+
+***
+
+## Step 3: Build the Scoring Logic
+
+Once you have the intake form, you need a scoring layer — a set of rules that evaluates the responses and produces a qualification verdict.
+
+The simplest version is a point-based system:
+
+| Question | Answer | Points |
+|---|---|---|
+| Budget | £5,000+ | 3 |
+| Budget | £2,000–£5,000 | 1 |
+| Budget | Under £2,000 | 0 |
+| Timeline | Immediately | 3 |
+| Timeline | Within 30 days | 2 |
+| Timeline | 1–3 months | 1 |
+| Timeline | Exploring options | 0 |
+| Decision-maker | Yes | 2 |
+| Decision-maker | No | 0 |
+| Problem type | In scope | 2 |
+| Problem type | Partial fit | 1 |
+| Problem type | Out of scope | 0 |
+
+Set a threshold. A score of 7 or above routes to the calendar booking step. A score of 4–6 triggers a "tell me more" follow-up sequence. A score of 3 or below receives a polite redirect.
+
+This logic lives in your automation tool — Make.com and n8n both handle this cleanly using conditional branches tied to form field values.
+
+> The exact thresholds will need calibration after the first few weeks. Run the system, review the leads it passed through, and adjust the scoring weights based on which ones actually converted.
+
+***
+
+## Step 4: Connect the Calendar
+
+For leads who cross the qualification threshold, the system's job is to make booking frictionless — one click, pick a slot, done.
+
+The booking confirmation should include:
+- Date and time (with timezone clarification if you serve clients internationally)
+- A brief "what to expect on this call" note (three bullet points maximum)
+- A calendar invite with a video call link pre-attached
+- An optional short prep question: *"Is there anything specific you'd like to cover?"*
+
+If your calendar tool allows it, add a 24-hour reminder sequence: one email the day before, one the morning of. Show rates on calls increase significantly with a simple reminder.
+
+### Calendar tools
+
+- **Cal.com** (open-source, strong Make/Zapier integration, recommended)
+- **Calendly** (easiest setup, most widely recognised)
+- **TidyCal** (affordable lifetime pricing, good for solo operators)
+
+Connect your calendar tool to your automation workflow so that when a lead crosses the qualification threshold, the booking link is sent automatically — not when you get around to checking your inbox.
+
+***
+
+## Step 5: Write the Three Follow-up Sequences
+
+A complete system needs three distinct response paths, not one. Each path handles a different qualification outcome:
+
+### Path 1: Qualified — Book the Call
+
+> *"Thanks for reaching out, [Name]. Based on what you've shared, this sounds like a strong fit for what we do. You can book a [30-minute / 60-minute] discovery call directly here: [link]. Looking forward to speaking with you."*
+
+Short. Direct. No fluff. The link is the CTA — don't bury it in three paragraphs.
+
+### Path 2: Partial Fit — Ask a Follow-up Question
+
+> *"Thanks for getting in touch, [Name]. I'd love to understand your project a bit better before we set up a call. [Specific follow-up question based on their intake answers]. Just reply to this email and I'll come back to you within 24 hours."*
+
+This path keeps the lead warm without committing to a call that may not be the right use of time. The follow-up question should be specific to what was ambiguous in their intake — budget, scope, or timeline.
+
+### Path 3: Not a Fit — Redirect with Respect
+
+> *"Thanks for reaching out, [Name]. Based on what you've shared, I don't think I'm the right fit for your project at this stage — but I didn't want to leave you without a direction. [Specific useful resource, referral suggestion, or alternative approach]. Wishing you the best with it."*
+
+This matters more than most people think. A respectful, genuinely helpful redirect does two things: it maintains your reputation, and it occasionally turns a "not now" into a future client when their situation changes.
+
+***
+
+## The Full Tool Stack
+
+Here is what a complete, working AI lead qualification system looks like at the infrastructure level:
+
+| Component | Tool Options | Cost |
+|---|---|---|
+| Intake form | Tally, Typeform, HubSpot Forms | Free–£50/mo |
+| Automation layer | Make.com, n8n, Zapier | Free–£20/mo |
+| Scoring logic | Make.com conditional branches | Included above |
+| Calendar booking | Cal.com, Calendly | Free–£12/mo |
+| CRM logging | HubSpot, Pipedrive, Notion | Free–£40/mo |
+| AI response generation | OpenAI API | Usage-based (~£10–20/mo at SME volume) |
+| Email delivery | Gmail, Resend, Postmark | Free–£15/mo |
+
+**Total monthly cost for a fully functional system: roughly £50–120/month**, depending on your volume and existing tool subscriptions.
+
+Compare that to the cost of a missed enterprise client, a week of wasted discovery calls, or the 47-hour average response time that costs you deals every month.
+
+***
+
+## What the Flow Looks Like End to End
+
+Once everything is connected, here is what happens from the moment a lead submits your intake form:
+
+1. **Lead submits form** — Tally or Typeform captures the responses
+2. **Make.com receives the data** — triggers the scoring logic immediately
+3. **Score calculated** — each answer mapped to a point value, total computed
+4. **Routing decision made** — qualified, partial fit, or not a fit
+5. **Qualified path:** personalised email sent with booking link → lead books a slot → CRM deal created → you receive a notification with lead summary
+6. **Partial fit path:** follow-up question email sent → reply captured → manual review flagged in CRM
+7. **Not a fit path:** redirect email sent → lead tagged in CRM for future reference
+8. **All paths:** full intake data logged to CRM, deal stage set, lead source recorded
+
+From form submission to calendar invite: under **four minutes**, regardless of whether you're in a meeting, asleep, or on a flight.
+
+***
+
+## The Three Mistakes That Break These Systems
+
+**Mistake 1: Scoring without testing**
+Build the system, then manually run twenty past leads through it. Would it have qualified the right ones? Adjust before going live.
+
+**Mistake 2: A redirect email that feels like a rejection**
+Unqualified leads talk. A cold or dismissive "you're not a fit" email damages your reputation. Write the redirect as if you're helping a friend — because sometimes that "not a fit" lead knows three people who are.
+
+**Mistake 3: Not closing the CRM loop**
+If your qualification system doesn't log to your CRM, you have no data. No data means no improvement over time. Every lead — qualified or not — should be a record you can learn from.
+
+***
+
+_Ready to build this for your business? [Book a free discovery call](https://calendar.app.google/FWxEjkJSGDDemGJD9) and we'll map out the exact system — tools, logic, and sequences — for your specific client profile and workflow._
